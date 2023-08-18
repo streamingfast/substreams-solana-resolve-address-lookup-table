@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package addresslookuptables.types.v1;
+
+message AddressLookupTables {
+  map<string, Resolved> address_lookup_tables = 1;
+}
+
+message Resolved {
+  repeated string addresses = 1;
+}

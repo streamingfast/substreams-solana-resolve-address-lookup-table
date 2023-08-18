@@ -1,0 +1,31 @@
+specVersion: v0.1.0
+package:
+  name: resolved_address_lookup_table
+  version: v0.1.0
+  url: https://github.com/streamingfast/substreams-solana-resolved-address-lookup-table
+  doc: |
+    A mapper which resolves all the address lookup tables
+
+imports:
+  address_lookup_tables: https://github.com/streamingfast/substreams-solana-address-lookup-table/releases/download/v0.1.1/address-lookup-table-v0.1.1.spkg
+
+protobuf:
+  files:
+    - addresslookuptables/v1/addresslookuptables.proto
+  importPaths:
+    - ./proto
+
+binaries:
+  default:
+    type: wasm/rust-v1
+    file: target/wasm32-unknown-unknown/release/substreams_solana_resolved_address_lookup_table.wasm
+
+modules:
+  - name: map_address_lookup_table_resolver
+    kind: map
+    initialBlock: 181751000 #154656000
+    output:
+      type: proto:addresslookuptables.types.v1.AddressLookupTables
+    inputs:
+      - source: sf.solana.type.v1.Block
+      - store: address_lookup_tables:store_address_lookup_tables
