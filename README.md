@@ -18,5 +18,5 @@ sftoken
 
 ### Run substreams
 ```bash
-substreams run substreams.yaml map_holders -e mainnet.sol.streamingfast.io:443 -t +1000
+substreams run substreams.yaml map_address_lookup_table_resolver -e mainnet.sol.streamingfast.io:443 -t +1000
 ```

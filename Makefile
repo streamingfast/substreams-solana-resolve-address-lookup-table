@@ -12,4 +12,4 @@ package: build
 
 .PHONE: stream
 stream:
-	substreams run substreams.yaml run -e mainnet.sol.streamingfast.io:443 -t +1000
+	substreams run substreams.yaml map_address_lookup_table_resolver -e mainnet.sol.streamingfast.io:443 -t +1000
