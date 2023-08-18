@@ -23,7 +23,7 @@ binaries:
 modules:
   - name: map_address_lookup_table_resolver
     kind: map
-    initialBlock: 181751000 #154656000
+    initialBlock: 154656000
     output:
       type: proto:addresslookuptables.types.v1.AddressLookupTables
     inputs:
